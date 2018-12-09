@@ -4,10 +4,12 @@
 #include "Scene.h"
 #include "Body.h" 
 #include "LoadFile.h"
+#include "PickFileToLoad.h"
+#include "SDL_image.h"
 #include <map>
 #include <vector>
 #include <SDL.h>
-#include "SDL_image.h"
+
 
 using namespace MATH;
 using namespace std;
@@ -15,18 +17,15 @@ using namespace std;
 class GameEngine : public Scene
 {
 private:
-	int typeOfPiece;
-	string imageName;
-	Vec3 positionVec;
-
+	string fileName; //the holder for when new file or existing file is choosen
+	int typeOfPiece;//start value of adding new item to the map
 public:
 
-	std::map<int, Body*> gameMap;
-	std::vector<Body*> gameBodies;
+	std::map<int, Body*> gameMap;	
 
-	std::string folder;
-	std::vector<std::string> spriteImage;
-	std::vector<Vec3> spritePosition;
+	std::string folder;//folder append to add to a file
+	std::vector<std::string> spriteImage;//list of images taken from LoadFile
+	std::vector<Vec3> spritePosition;//list of vecs from LoadFile
 
 private:
 	SDL_Window * window;

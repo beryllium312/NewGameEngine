@@ -34,10 +34,10 @@ public:
 
 public:
 	LoadFile();
-	LoadFile(const char * fileName);
+	LoadFile(std::string fileName);
 	~LoadFile();
 private:
-	void LoadObj(const char * fileName);
+	void LoadObj(std::string fileName);
 	float iterateVect(std::string nextLine);
 	int iterateRect(std::string nextLine);
 	void sendInfo(std::vector<std::string> spriteImage_, std::vector<Vec3> spritePosition_);

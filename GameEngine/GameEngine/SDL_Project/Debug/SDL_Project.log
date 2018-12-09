@@ -1,8 +1,8 @@
 ﻿  GameEngine.cpp
-c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.h(35): warning C4244: 'initializing': conversion from 'long double' to 'unsigned long', possible loss of data
-c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(28): warning C4018: '<': signed/unsigned mismatch
-c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(41): warning C4018: '<': signed/unsigned mismatch
-c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(107): warning C4018: '<': signed/unsigned mismatch
-c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(113): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(114): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.h(34): warning C4244: 'initializing': conversion from 'long double' to 'unsigned long', possible loss of data
+c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(32): warning C4018: '<': signed/unsigned mismatch
+c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(122): warning C4018: '<': signed/unsigned mismatch
+c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(128): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\julie\desktop\gameengineprogramming\gameengine\gameengine\sdl_project\gameengine.cpp(129): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   SDL_Project.vcxproj -> C:\Users\Julie\Desktop\GameEngineProgramming\GameEngine\GameEngine\Debug\SDL_Project.exe

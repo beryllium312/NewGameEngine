@@ -18,24 +18,26 @@ bool GameEngine::OnCreate()
 	//IMG_Init(IMG_INIT_PNG);
 
 	projectionMatrix = MMath::viewportNDC(w, h) * MMath::orthographic(0.0f, 30.0f, 0.0f, 15.0f, 0.0f, 1.0f);
-	LoadFile loadedFile("character_setup.txt");
+	PickFileToLoad loadFile;	
+	std::string theUserLoadFile = loadFile.searchAndStoreFileName("loadWorkingFiles/");
+	
+	LoadFile emptyFile(theUserLoadFile);
+	//LoadFile emptyFile("character_setup.txt");//always loads this one for variables
+	//find file to load
+	spriteImage = emptyFile.imageNames;
+	spritePosition = emptyFile.postions;
 
-	spriteImage = loadedFile.imageNames;
-	spritePosition = loadedFile.postions;
-
-	populateVec(loadedFile.imageNames, loadedFile.postions);
+	populateVec(emptyFile.imageNames, emptyFile.postions);
 
 	for (int i = 0; i < spriteImage.size(); i++)
-	{
-		//std::string path = "pics/";
-		//std::string fileFormat = ".png";
-		std::string path = spriteImage[i];
-		//path.append(fileFormat);
-		//invBtnss[i] = path;
-		//Body* body = new Body(path, spritePosition[i]);  
+	{		
+		std::string path = "pics/";
+		
+		path.append(spriteImage[i]);
+		
+		
 		gameMap.insert(std::pair<int, Body*>(i, new Body(path, spritePosition[i])));
 
-		//gameMap.push_back(new Body(body[i]));
 	}
 
 	for (int i = 0; i < gameMap.size(); i++) {
@@ -49,10 +51,11 @@ bool GameEngine::OnCreate()
 }
 void GameEngine::Update()
 {
-	typeOfPiece = gameBodies.size();//the map holding the pieces typeOfPiece can be the new key +1
+	typeOfPiece = gameMap.size();//the map holding the pieces typeOfPiece can be the new key +1
 }
 void HandleEvents()
 {
+	
 	//std::cout << "not pure virtual" << endl;
 	//switch(key) 
 	//{
@@ -67,22 +70,8 @@ void HandleEvents()
 	//		OnMouseClick->Body *obj = new Body();
 	//		push_back
 	//		//or Char *ob
-	//
-	//
-	//}
 
-	//readFileFromDir() {
-	//	read the files from a directory;
-	//		push each line into a vector;
-	//		string fileUserPicked;
-	//		std::cout << "Enter number for the file you want" << endl;
-	//		cin >> fileUserPicked;
-	//		
-	//		pickYourFile(int FileUserPicked_) 
-	//		{
-	//			
-	//		}
-	//}
+
 
 }
 
@@ -91,12 +80,6 @@ void GameEngine::populateVec(std::vector<std::string> spriteImage_, std::vector<
 	spriteImage = spriteImage_;
 	spritePosition = spritePosition_;
 }
-void GameEngine::populateMap(std::map<int, std::string> spriteImage_)
-{
-	//gameMap = spriteImage_;
-
-}
-
 
 void GameEngine::Render()
 {
@@ -104,7 +87,7 @@ void GameEngine::Render()
 	SDL_Rect imageRectangle;
 	SDL_FillRect(screenSurface, nullptr, SDL_MapRGB(screenSurface->format, 0xff, 0xff, 0xff));//clear command, fills screen with white
 
-	for (int i = 0; i < gameMap.size(); i++) {
+	for (int i = 0; i < gameMap.size(); i++) {//change to not render the blank
 
 		Vec3 screenCoords = projectionMatrix * gameMap[i]->pos;
 
@@ -116,17 +99,16 @@ void GameEngine::Render()
 		SDL_BlitSurface(gameMap[i]->getImage(), nullptr, screenSurface, &imageRectangle);
 
 	}
-	//ui -> Render();
 
 	SDL_UpdateWindowSurface(window);
 }
 void GameEngine::OnDestroy()
 {
-	/*for (int i = 0; i < gameBodies.size(); i++)
+	/*for (int i = 0; i < gameMap.size(); i++)
 	{
-		if (gameBodies == true) {
-			delete gameBodies;
-			gameBodies[i] = nullptr;
+		if (gameMap.) {
+			delete gameMap;
+			*gameMap[i] = nullptr;
 		}
 	}*/
 }

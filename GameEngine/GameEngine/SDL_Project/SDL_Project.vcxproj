@@ -17,6 +17,7 @@
     <ClCompile Include="LoadFile.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MMath.cpp" />
+    <ClCompile Include="PickFileToLoad.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VMath.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -29,6 +30,7 @@
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="MMath.h" />
     <ClInclude Include="Objects.h" />
+    <ClInclude Include="PickFileToLoad.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector.h" />

@@ -3,12 +3,12 @@
 
 LoadFile::LoadFile() {}
 
-LoadFile::LoadFile(const char * fileName)
+LoadFile::LoadFile(std::string fileName)
 {
 	LoadObj(fileName);
 }
 
-void LoadFile::LoadObj(const char * fileName)
+void LoadFile::LoadObj(std::string fileName)
 {
 	ifstream objectFile(fileName);//check to see if the file can is found = null	
 	string nextLine;
@@ -82,9 +82,7 @@ void LoadFile::LoadObj(const char * fileName)
 
 void LoadFile::makeGamePiece(std::string imageFile_, Vec3 objVector_, int typeOfPiece_)
 {
-	cout << "Inside makeGame" << endl;
-	static int count = 0;
-	count++;
+	cout << "Inside makeGame" << endl;	
 
 	switch (typeOfPiece_) {
 	case 1:

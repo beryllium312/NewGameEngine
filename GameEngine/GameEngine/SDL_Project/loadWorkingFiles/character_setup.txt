@@ -1,0 +1,6 @@
+f mainChar.bmp
+v 5 10 10
+t 1
+f mainEnemy.bmp
+v 8 11 11
+t 2
