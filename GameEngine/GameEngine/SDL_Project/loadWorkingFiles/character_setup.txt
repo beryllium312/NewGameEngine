@@ -1,6 +1,18 @@
 f mainChar.bmp
-v 5 10 10
+v 0 0 0
 t 1
 f mainEnemy.bmp
-v 8 11 11
+v 0 0 0
 t 2
+f gameTile.bmp
+v 0 0 0
+t 3
+f mainChar.bmp
+v 5 10 0
+t 1
+f mainEnemy.bmp
+v 8 11 0
+t 2
+f gameTile.bmp
+v 7 5 0
+t 3

@@ -8,33 +8,26 @@ PickFileToLoad::PickFileToLoad()
 std::string PickFileToLoad::searchAndStoreFileName(const std::string& folderName_)
 {
 	fs::path pathToShow(folderName_);
-	std::vector<std::string> file_names;	
+	std::vector<std::string> file_names;//holds the names of the files in dir
 	using iterator = fs::recursive_directory_iterator;
 
 	for (iterator iter(pathToShow); iter != iterator{}; ++iter) {
-		string tempPath = iter->path().string();
-
-		/*std::filesystem::path p(tempPath);
-		p.make_preferred();
-		std::string name = p.filename().string();	
-
-		cout << "filename() = " << name << "\n"; for if you want just the file*/
-		file_names.push_back(iter->path().string());
+		string tempPath = iter->path().string();//take the dir and file path
+		file_names.push_back(iter->path().string());//stores the file path
 	}	
-
-	vector<string> names;
+	
 	int userResult;
-	std::cout << "Type a number associated with the file name: " << endl;
+	std::cout << "Type a number associated with the file name Starting With 0: " << endl;
 
-	for (int i = 0; i < file_names.size(); ++i)
+	for (int i = 0; i < file_names.size(); ++i)//lists the files and prints them
 	{
 		file_names[i];
-		std::cout << file_names[i] << endl;
+		std::cout <<  file_names[i] << endl;
 	}	
 	
 	std::cin >> userResult;
 	
-	string finalSelection = file_names[userResult];
+	string finalSelection = file_names[userResult];//selects the index fo the file
 	std::cout << finalSelection << endl;
 	return finalSelection;
 }

@@ -41,9 +41,7 @@ public:
 	void Update();
 	void HandleEvents();
 	void Render();
-	void OnDestroy();
-	void populateMap(std::map<int, std::string> spriteImage_);
-	void populateVec(std::vector<std::string> spriteImage_, std::vector<Vec3> spritePosition_);
+	void OnDestroy();	
 	~GameEngine();
 };
 
